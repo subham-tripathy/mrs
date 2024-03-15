@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/statics/css/navStyle.css">
+    <style>
+        #singupForm {
+            background-color: gray;
+            border: 2px solid white;
+            width: max-content;
+            margin: auto;
+            text-align: center;
+            padding: 4% 7%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px black;
+        }
+
+        #singupForm h2 {
+            font-size: 40px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        #singupForm input {
+            font-size: 23px;
+            padding: 5px;
+            box-shadow: 0 1px 5px white;
+            border: 2px solid gray;
+            border-radius: 5px;
+            padding-left: 7px;
+            margin: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            font-size: 19px;
+            padding: 7px 15px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 1px 3px black;
+            cursor: pointer;
+        }
+
+        a {
+            color: white;
+        }
+
+        button:hover {
+            box-shadow: 0 1px 5px black;
+        }
+    </style>
+    <title>Login Form</title>
+</head>
+
+<body>
+    <div id="msg" style="display: none;">{{msg}}</div>
+
+    <nav>
+        <a href="/">
+            <h1 id="logo">Movie Recommendation System</h1>
+        </a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="../about/">About</a></li>
+            <li><a href="../movies/">Movies</a></li>
+            <li><a href="../login/">Login</a></li>
+        </ul>
+    </nav>
+    <section id="singupForm">
+        <h2>Sign Up Page</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" id="username" name="username" placeholder="username" required><br>
+            <input type="password" id="password" name="password" placeholder="password" required><br>
+            <input type="cpassword" id="cpassword" name="cpassword" placeholder="confirm password" required><br>
+            <a href="/login">Have an account</a><br>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+
+</body>
+<script>
+    const msg = document.getElementById('msg').textContent
+    if (msg == 'userfound') {
+        alert('User already exists !')
+    }
+    else if (msg == 'successsignup') {
+        alert('Successfully Signed Up !')
+        window.location.href = '/'
+    }
+    else if (msg == 'passwordnotsame') {
+        alert('Password and Confirm Password must be same !')
+    }
+    else if (msg == 'alreadyloggedin') {
+        alert('You\'re Already Logged In !')
+        window.location.href = '/'
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="msg" style="display: none;">{{msg}}</div>
+    <script>
+        const msg =document.querySelector('#msg').textContent
+        if (msg == 'notloggedin'){
+            alert('You must login first !')
+            window.location.href = '/login'
+        }
+        else if (msg == 'logoutsuccess'){
+            alert('Logged out !')
+            window.location.href = '/'
+        }
+
+    </script>
+</body>
+</html>

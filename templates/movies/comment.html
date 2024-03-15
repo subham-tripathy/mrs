@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="msg" style="display: none;">{{msg}}</div>
+
+
+    <section style="display: none;">
+        User: {{data.username}}
+        <br>
+        comment: {{data.commentData}}
+        <br>
+        film: {{data.film}}
+        rating: {{data.commentRating}}
+    </section>
+    
+    <div style="display: none;" id="film">{{data.film}}</div>
+    
+    
+    
+    
+    
+    
+    <script>
+        const msg = document.querySelector('#msg').textContent
+        if (msg == 'notloggedin'){
+            alert("You must be logged in to comment ")
+        }
+
+        let film = document.querySelector('#film').textContent
+        let url = '/movies/getMovie.html?movieName='+film
+        window.location.href = url
+        </script>
+</body>
+</html>

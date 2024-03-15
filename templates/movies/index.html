@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/statics/css/moviePage.css">
+    <link rel="stylesheet" href="/statics/css/navStyle.css">
+    <title>HOME - Movie Recommendation System</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <h1 id="logo">Movie Recommendation System</h1>
+        </a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="../about/">About</a></li>
+            <li><a href="../movies/" class="current">Movies</a></li>
+            <li><a href="../login/">Login</a></li>
+        </ul>
+    </nav>
+    <section>
+
+        <div style="text-align: center;">
+            <input type="text" name="movieInput" id="movieInput" placeholder="Search Movie">
+            <div id="movieList">
+            </div>
+        </div>
+    </section>
+    <div style="display: none;" id="msg">{{msg}}</div>
+    <script type="module" src="/statics/js/movieSearchInput.js"></script>
+</body>
+
+</html>

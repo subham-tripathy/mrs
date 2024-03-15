@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/statics/css/navStyle.css">
+    <style>
+        #home h1 {
+            text-align: center;
+            padding: 100px 0;
+            background-color: gray;
+            font-size: 70px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+    <title>MOVIES - Movie Recommendation System</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <h1 id="logo">Movie Recommendation System</h1>
+        </a>
+        <ul>
+            <li><a href="/" class="current">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/movies/">Movies</a></li>
+            {% if login %}
+            <li><a href="/login/">{{ login }}</a></li>
+            {% endif %}
+            {% if username %}
+            <li><a href="/">hi, {{ username }}</a></li>
+            <li><a href="/logout/">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>MOVIE RECOMMENDATION SYSTEM</h1>
+    </section>
+
+
+
+
+</body>
+
+</html>
